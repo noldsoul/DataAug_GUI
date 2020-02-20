@@ -208,16 +208,16 @@ def main(h, b, c, d):
     # parser.add_argument('--cpu', action='store_true')
     # parser.add_argument('--verbose', action='store_true')
     config = parser.parse_args()
-    config.content = '/home/chandradeep_p/repositories/WCT2/examples/content'
-    config.content_segment = '/home/chandradeep_p/repositories/WCT2/examples/content_segment'
-    config.style = '/home/chandradeep_p/repositories/WCT2/examples/style'
-    config.style_segment = '/home/chandradeep_p/repositories/WCT2/examples/style_segment'
-    config.output = './outputs'
+    config.content = path + '/DataAug_GUI/DataAugOutputs/style_images'
+    config.content_segment = path + '/DataAug_GUI/DataAugOutputs/style_masks'
+    config.style = path + '/DataAug_GUI/DataAugOutputs/target_images'
+    config.style_segment = path + '/DataAug_GUI/DataAugOutputs/target_masks'
+    config.output = path + '/DataAug_GUI/DataAugOutputs/outputs'
     config.image_size = int(512)
     config.alpha = 1
     config.option_unpool = 'cat5'
     config.e, config.d, config.s, config.a = True, True, True, True
-    config.transfer_at_encoder, config.transfer_at_decoder, config.transfer_at_skip, config.transfer_all = True, True, True, True
+    config.transfer_at_encoder, config.transfer_at_decoder, config.transfer_at_skip, config.transfer_all = config.e, config.d, config.s, config.a
     config.cpu = True
     config.verbose = True
 
